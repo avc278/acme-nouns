@@ -3,7 +3,6 @@ const app = express();
 const db = require('./db');
 const api = require('./api');
 const path = require('path');
-const { Person, Place, Thing } = db.models;
 
 const port = 3000;
 

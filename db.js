@@ -1,8 +1,5 @@
-const pg = require('pg');
 const Sequelize = require('sequelize');
-
 const conn = new Sequelize('postgres://localhost/acme_nouns');
-
 const { UUID, UUIDV4, STRING } = Sequelize;
 
 const Person = conn.define("person", {
