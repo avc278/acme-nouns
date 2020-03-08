@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/avc278/acme-nouns#readme",
   "dependencies": {
+    "express": "^4.17.1",
     "pg": "^7.18.2",
     "sequelize": "^5.21.5"
   }
