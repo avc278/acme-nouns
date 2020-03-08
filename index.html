@@ -56,17 +56,35 @@ nav a.active {
         return (
           <ul>
             {
-              people.map(person => <li key={ person.id}>{ person.name}</li>)
+                people.map(person => {
+                    return (
+                    <li key={ person.id}>{ person.name} 
+                        <ul>
+                            <li>From: {person.place.name}</li>
+                            <li>Owns: {person.things[0].name}</li>
+                        </ul>
+                    </li>
+                    )
+                })
             }
           </ul>
         );
       };
 
+
       const Places = ({ places })=> {
         return (
           <ul>
             {
-              places.map(place => <li key={ place.id}>{ place.name}</li>)
+                places.map(place => {
+                    return (
+                    <li key={ place.id}>{ place.name} 
+                        <ul>
+                            <li>{place.people[0].name}</li>
+                        </ul>
+                    </li>
+                    )
+                })
             }
           </ul>
         );
@@ -76,7 +94,15 @@ nav a.active {
         return (
           <ul>
             {
-              things.map(thing => <li key={ thing.id}>{ thing.name}</li>)
+                things.map(thing => {
+                    return (
+                    <li key={ thing.id}>{ thing.name} 
+                        <ul>
+                            <li>{thing.person.name}</li>
+                        </ul>
+                    </li>
+                    )
+                })
             }
           </ul>
         );
