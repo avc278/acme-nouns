@@ -3,16 +3,16 @@ const Sequelize = require('sequelize');
 
 const conn = new Sequelize('postgres://localhost/acme_nouns');
 
-// TODO: try destructuring from Sequelize
+const { UUID, UUIDV4, STRING } = Sequelize;
 
 const Person = conn.define("person", {
     id: {
         primaryKey: true,
-        type: Sequelize.UUID,
-        defaultValue: Sequelize.UUIDV4,
+        type: UUID,
+        defaultValue: UUIDV4,
     },
     name: {
-        type: Sequelize.STRING,
+        type: STRING,
         allowNull: false,
         unique: true,
         allowEmpty: false,
@@ -21,11 +21,11 @@ const Person = conn.define("person", {
 const Place = conn.define("place", {
     id: {
         primaryKey: true,
-        type: Sequelize.UUID,
-        defaultValue: Sequelize.UUIDV4,
+        type: UUID,
+        defaultValue: UUIDV4,
     },
     name: {
-        type: Sequelize.STRING,
+        type: STRING,
         allowNull: false,
         unique: true,
         allowEmpty: false,
@@ -35,11 +35,11 @@ const Place = conn.define("place", {
 const Thing = conn.define("thing", {
     id: {
         primaryKey: true,
-        type: Sequelize.UUID,
-        defaultValue: Sequelize.UUIDV4,
+        type: UUID,
+        defaultValue: UUIDV4,
     },
     name: {
-        type: Sequelize.STRING,
+        type: STRING,
         allowNull: false,
         unique: true,
         allowEmpty: false,
